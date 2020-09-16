@@ -1,0 +1,32 @@
+folder_contains_YOLO = 
+make_yet = 0
+dont_show = 0
+cfgFile = nfpa/yolov3-tiny-custom.cfg
+dataFile = nfpa/yolov3-tiny-custom.data
+
+# Training
+choice = tiny3-3l
+classes = 1
+batch = 64
+subdivisions = 8
+width = 416
+height = 416
+max_batches = 500200
+steps = 400000,450000
+
+train = ./train.txt
+valid = ./val.txt
+names = ./custom.names
+pre_weight = 
+backupFolder = darknet/backup
+
+# Testing
+testWeight = darknet/backup/yolov3-tiny-custom_best.weights
+conf_thresh = 0.25
+iou_thresh = 0.5
+
+input_list_images = 
+output_list_images = ./result.txt
+
+input_video = 
+output_video = ./result.mp4
